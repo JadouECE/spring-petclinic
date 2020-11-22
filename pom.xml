@@ -14,37 +14,8 @@
   </parent>
   <name>petclinic</name>
 
-  <plugin>
-  	<!--Ajout tp -->
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.8.0</version>
-    <configuration>
-        <schemaVersion>v2</schemaVersion>
-        <resourceGroup>rg-jade.laville</resourceGroup>
-        <appServicePlanName>appservice-jade.laville</appServicePlanName>
-        <appName>web-jadelaville</appName>
-        <region>westeurope</region>
-        <runtime>
-            <os>linux</os>
-            <javaVersion>jre8</javaVersion>
-          </runtime>
-          <deployment>
-            <resources>
-              <resource>
-                <directory>${project.basedir}/target</directory>
-                <includes>
-                  <include>*.jar</include>
-                </includes>
-              </resource>
-            </resources>
-          </deployment>
-          <stopAppDuringDeployment>true</stopAppDuringDeployment>
-    </configuration>
-</plugin>
-
+ 
   <properties>
-
     <!-- Generic properties -->
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -355,6 +326,35 @@
           <plugins>
             <!-- This plugin's configuration is used to store Eclipse m2e settings
    only. It has no influence on the Maven build itself. -->
+			 <plugin>
+			  	<!--Ajout tp -->
+			    <groupId>com.microsoft.azure</groupId>
+			    <artifactId>azure-webapp-maven-plugin</artifactId>
+			    <version>1.8.0</version>
+			    <configuration>
+			        <schemaVersion>v2</schemaVersion>
+			        <resourceGroup>rg-jade.laville</resourceGroup>
+			        <appServicePlanName>appservice-jade.laville</appServicePlanName>
+			        <appName>web-jadelaville</appName>
+			        <region>westeurope</region>
+			        <runtime>
+			            <os>linux</os>
+			            <javaVersion>jre8</javaVersion>
+			          </runtime>
+			          <deployment>
+			            <resources>
+			              <resource>
+			                <directory>${project.basedir}/target</directory>
+			                <includes>
+			                  <include>*.jar</include>
+			                </includes>
+			              </resource>
+			            </resources>
+			          </deployment>
+			          <stopAppDuringDeployment>true</stopAppDuringDeployment>
+			    </configuration>
+			</plugin>
+
             <plugin>
               <groupId>org.eclipse.m2e</groupId>
               <artifactId>lifecycle-mapping</artifactId>
